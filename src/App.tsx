@@ -63,7 +63,7 @@ function App() {
     <div className="">
       <div className="bg-white text-gray-800">
         <div className="max-w-7xl mx-auto overflow-hidden sm:px-6 lg:px-8 py-16">
-          <h2 className="text-4xl font-bold pb-16">Products</h2>
+          <h2 className="text-4xl font-bold pb-16">Pokemons</h2>
 
           <div className="-mx-px border-t border-l border-gray-200 grid grid-cols-2 sm:mx-0 md:grid-cols-3 lg:grid-cols-5">
             {
