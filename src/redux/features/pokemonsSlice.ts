@@ -34,7 +34,7 @@ const pokemonsSlice = createSlice({
     // we need payload to catch the pokemon url
     getPokemonDetails: (state, { payload }) => {},
 
-    //
+    // successed fetching pokemon details
     getPokemonDetailsSuccess: (state, { payload }: PayloadAction<IPokemon>) => {
       const index = state.pokemons.results?.findIndex(pokemon => pokemon.name === payload.name)
       if (index !== -1) {
@@ -44,13 +44,17 @@ const pokemonsSlice = createSlice({
           completed: true,
         }
       }
+    },
+    // failed fetching pokemon details
+    getPokemonDetailsFailure: (state, { payload }: PayloadAction<any>) => {
+      state.error = payload
     }
   },
 
 })
 
 // Three actions generated from the slice
-export const { getPokemons, getPokemonsSuccess, getPokemonsFailure, getPokemonDetails, getPokemonDetailsSuccess } = pokemonsSlice.actions
+export const { getPokemons, getPokemonsSuccess, getPokemonsFailure, getPokemonDetails, getPokemonDetailsSuccess, getPokemonDetailsFailure } = pokemonsSlice.actions
 
 // the selectore 
 export const pokemonsSelector = (state : IPokemonsState) => state.pokemons

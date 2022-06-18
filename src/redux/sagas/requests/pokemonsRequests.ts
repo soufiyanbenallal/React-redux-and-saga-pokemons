@@ -12,8 +12,6 @@ export function requestGetPokemons({limit, offset}: IParams): Promise<IPokemons>
 }
 
 export function requestGetPokemonById(url: string): any {
-    console.log("url", url);
-    
     return get(url,'');
 }
 
